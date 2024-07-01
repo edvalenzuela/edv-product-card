@@ -12,9 +12,9 @@ export const ProductButtons = ({className, style}:ProductButtonsProps) => {
 
   const { counter, increaseBy, maxCount } = useContext(ProductContext);
 
-  const isMaxReached = useCallback(
-    () => (!!maxCount && counter === maxCount), 
-    [counter, maxCount]
+  const isMaxReached = useCallback(() => {
+      return !!maxCount && counter === maxCount
+    },[counter, maxCount]
   );
 
   return (
